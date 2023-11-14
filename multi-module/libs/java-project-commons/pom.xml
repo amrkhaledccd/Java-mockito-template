@@ -1,0 +1,13 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.template.javaproject.commons</groupId>
+    <artifactId>java-project-commons</artifactId>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>com.template.javaproject</groupId>
+        <artifactId>java-project-template</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+</project>

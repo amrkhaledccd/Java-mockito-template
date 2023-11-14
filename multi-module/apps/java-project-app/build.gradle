@@ -1,0 +1,7 @@
+apply plugin: 'application'
+
+dependencies {
+    implementation project(':java-project-commons')
+}
+
+mainClassName = 'com.template.javaproject.app.Application'

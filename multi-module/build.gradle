@@ -1,0 +1,42 @@
+subprojects {
+    apply plugin: 'java'
+
+    group = 'com.template.javaproject'
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    version = '1.0.0-SNAPSHOT'
+
+    repositories() {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation(
+            "ch.qos.logback:logback-core:${logbackVersion}",
+            "ch.qos.logback:logback-classic:${logbackVersion}"
+        )
+
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+        
+        testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+        testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+        testImplementation(
+            platform("org.junit:junit-bom:${junitVersion}"),
+            "org.junit.jupiter:junit-jupiter-api",
+            "org.junit.jupiter:junit-jupiter-engine",
+            "org.junit.jupiter:junit-jupiter-params",
+            "org.assertj:assertj-core:${assertjVersion}",
+            "org.mockito:mockito-core:${mockitoVersion}",
+            "org.mockito:mockito-junit-jupiter:${mockitoVersion}"
+        )
+    }
+
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+}
